@@ -1,0 +1,10 @@
+[package]
+name = "Parse-service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+thirtyfour = "*"  # проверьте актуальную версию на https://crates.io/crates/thirtyfour
+serde_json = "*"    # проверьте актуальную версию на https://crates.io/crates/serde_json
+tokio = { version = "*", features = ["full"] }
+sqlx = { version = "*", features = ["runtime-async-std", "postgres"] }
