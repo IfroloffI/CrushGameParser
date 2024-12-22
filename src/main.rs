@@ -33,8 +33,8 @@ async fn main() -> WebDriverResult<()> {
     let mut previous_value = String::new();
     let mut bets_total;
     let mut bets_total_div_span;
-    let mut players_online_value_span;
-    let mut players_online;
+    //let mut players_online_value_span;
+    //let mut players_online;
 
     loop {
         let curr_div = driver.query(By::Id("history-item-0")).first().await?;
@@ -43,14 +43,14 @@ async fn main() -> WebDriverResult<()> {
         if curr_value != previous_value {
             bets_total_div_span = driver.query(By::Id("bets-total")).first().await?;
             bets_total = bets_total_div_span.text().await?;
-            players_online_value_span = driver.query(By::Id("players-online-value")).first().await?;
-            players_online = players_online_value_span.text().await?;
+            //players_online_value_span = driver.query(By::Id("players-online-value")).first().await?;
+            //players_online = players_online_value_span.text().await?;
             //class="sc-ecPEgm jhxPcI" bets
             //let bet =driver.find_all(By::Id("all-bets-item-price")).await?;
             //for elem in bet{
             //    println!("{}", elem.text().await?);
             //}
-            println!("Онлайн челиков: {:?}", players_online);
+            //println!("Онлайн челиков: {:?}", players_online);
 
             sleep(Duration::from_micros(200)).await;
 
